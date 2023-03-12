@@ -46,6 +46,22 @@ const encryptMessage = (e) => {
     // console.log(arr.join(''));
     messageEncrypted = arr.join('');
     console.log('var messageEncrypted: ', messageEncrypted);
+
+    // Seleccionar y crear el cuadro del mensaje
+    const outputContainer = document.querySelector('[data-result-container]');
+    // const resultDefault = document.querySelector('[data-result-default]');
+    const result = document.createElement('div');
+    const resultText = document.createElement('span');
+    // resultDefault.remove();
+
+
+    // Modify values
+    resultText.innerText = messageEncrypted;
+
+    // Add child elements to parents
+    outputContainer.appendChild(result);
+    result.appendChild(resultText);
+
 };
 
 const decryptMessage = (e) => {

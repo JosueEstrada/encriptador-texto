@@ -1,10 +1,10 @@
-h1{
-    color: #2e2e2e;
-    #797979
-    #d6d6d6
-    #e5b567
-    #e87d3e
-    #9e86c8
-    #b05279
-    #6c99bb
+body {
+    font-family: Consolas, serif;
+    font-size: 1.5em;
+}
+
+div {
+    border: thin solid crimson;
+    padding: 2%;
+    margin: 2%;
 }
