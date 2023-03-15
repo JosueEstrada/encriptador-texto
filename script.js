@@ -6,6 +6,7 @@ const buttonCopy = document.querySelector('[data-btn-copy]');
 const outputContainer = document.querySelector('[data-result-container]');
 const result = document.createElement('div');
 const resultText = document.createElement('span');
+resultText.setAttribute('data-copy-text', '');
 outputContainer.prepend(result);
 result.appendChild(resultText);
 
@@ -52,12 +53,22 @@ const decryptMessage = (e) => {
     const value = input.value;
     input.value = '';
     let message = value.toLowerCase();
-    let messageEncrypted = '';
+    let messageDecrypted = '';
+    messageDecrypted = message.replace('ai', 'a');
+    messageDecrypted = messageDecrypted.replace('enter', 'e');
+    messageDecrypted = messageDecrypted.replace('imes', 'i');
+    messageDecrypted = messageDecrypted.replace('ober', 'o');
+    messageDecrypted = messageDecrypted.replace('ufat', 'u');
+    resultText.innerText = messageDecrypted;
+    console.log(messageDecrypted)
+    deleteDefaultMessage();
 };
 
 const copyMessage = (e) => {
     e.preventDefault();
     console.log('funciona copy')
+    const textToCopy = document.querySelector('[data-copy-text]');
+    navigator.clipboard.writeText(textToCopy.innerText);
 };
 
 const deleteDefaultMessage = () => {
