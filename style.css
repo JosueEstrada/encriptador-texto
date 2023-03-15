@@ -1,23 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+}
+
 body {
-    font-family: 'Inter', serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.5em;
     background: #E5E5E5;
 }
 
 div {
-    border: thin solid crimson;
+    border: thin solid black;
     /*padding: 2%;*/
     /*margin: 2%;*/
 }
 
-.inputContainer {
-    display: inline-block;
+.flex-container {
+    display: flex;
+    margin: 3%;
+}
 
+.inputContainer {
+    width: 70%;
+    margin: 3%;
+}
+
+.resultContainer {
+    width: 30%;
+    margin: 3%;
+    height: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.88);
+    border-radius: 32px;
 }
 
 .inputForm {
-    width: 680px;
+    width: 47%;
     height: 288px;
+
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
@@ -25,10 +45,15 @@ div {
     color: #0A3871;
 }
 
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 .btnEncrypt {
     width: 280px;
     height: 19px;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     /*align-items: flex-start;*/
     padding: 24px;
@@ -45,7 +70,7 @@ div {
 .btnDecrypt {
     width: 280px;
     height: 19px;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     /*align-items: flex-start;*/
     padding: 24px;
@@ -66,15 +91,12 @@ div {
     line-height: 19px;
     text-align: center;
     flex: none;
-    order: 0;
+    border: 0;
     flex-grow: 1;
+
 }
 
-.resultContainer {
-    width: 400px;
-    height: 944px;
-    display: inline-flex;
-    background: #FFFFFF;
-    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.88);
-    border-radius: 32px;
+.navbar {
+    display: flex;
+    flex-direction: row;
 }
