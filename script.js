@@ -1,18 +1,13 @@
 const buttonEncrypt = document.querySelector('[data-btn-encrypt]');
 const buttonDecrypt = document.querySelector('[data-btn-decrypt]');
 const buttonCopy = document.querySelector('[data-btn-copy]');
-// console.log(buttonCopy);
-// console.log(buttonDecrypt);
-// console.log(buttonEncrypt);
+
+// Crear contenedor de resultado
 const outputContainer = document.querySelector('[data-result-container]');
 const result = document.createElement('div');
 const resultText = document.createElement('span');
-// Modify values
-//resultText.innerText = messageEncrypted;
-// Add child elements to parents
 outputContainer.prepend(result);
 result.appendChild(resultText);
-
 
 const encryptMessage = (e) => {
     e.preventDefault();
@@ -46,9 +41,8 @@ const encryptMessage = (e) => {
         }
     });
     messageEncrypted = arr.join('');
-    // Seleccionar y crear el cuadro del mensaje
-    // Modify values
     resultText.innerText = messageEncrypted;
+    deleteDefaultMessage();
 };
 
 const decryptMessage = (e) => {
@@ -61,13 +55,18 @@ const decryptMessage = (e) => {
     let messageEncrypted = '';
 };
 
-const copyMesagge = (e) => {
+const copyMessage = (e) => {
     e.preventDefault();
     console.log('funciona copy')
 };
+
+const deleteDefaultMessage = () => {
+    const deleteDefault = document.querySelector('.defaultMessage');
+    deleteDefault.setAttribute('hidden', true);
+}
 
 
 // Evento Listener
 buttonEncrypt.addEventListener('click', encryptMessage);
 buttonDecrypt.addEventListener('click', decryptMessage);
-buttonCopy.addEventListener('click', copyMesagge);
+buttonCopy.addEventListener('click', copyMessage);
