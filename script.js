@@ -4,26 +4,29 @@ const buttonCopy = document.querySelector('[data-btn-copy]');
 // console.log(buttonCopy);
 // console.log(buttonDecrypt);
 // console.log(buttonEncrypt);
+const outputContainer = document.querySelector('[data-result-container]');
+const result = document.createElement('div');
+const resultText = document.createElement('span');
+// Modify values
+//resultText.innerText = messageEncrypted;
+// Add child elements to parents
+outputContainer.prepend(result);
+result.appendChild(resultText);
+
 
 const encryptMessage = (e) => {
     e.preventDefault();
-    // console.log('funciona encryt')
     const input = document.querySelector('[data-form-input]');
     const value = input.value;
     input.value = '';
     let message = value.toLowerCase();
     let messageEncrypted = '';
-    // console.log(value);
-    // console.log(message);
     let arr = [];
     for (const messageElement of message) {
         arr.push(messageElement);
     }
-    // console.log(message);
-    // console.log('lista array:', arr);
     // Recorrer el array y reemplazar por la encriptacion
     arr.forEach((element, index) => {
-        //console.log('elemento: ' + element + ' index ' + index);
         switch (element) {
             case 'a':
                 arr[index] = 'ai';
@@ -42,37 +45,28 @@ const encryptMessage = (e) => {
                 break;
         }
     });
-    // console.log('encriptado: ',arr);
-    // console.log(arr.join(''));
     messageEncrypted = arr.join('');
-    console.log('var messageEncrypted: ', messageEncrypted);
-
     // Seleccionar y crear el cuadro del mensaje
-    const outputContainer = document.querySelector('[data-result-container]');
-    // const resultDefault = document.querySelector('[data-result-default]');
-    const result = document.createElement('div');
-    const resultText = document.createElement('span');
-    // resultDefault.remove();
-
-
     // Modify values
     resultText.innerText = messageEncrypted;
-
-    // Add child elements to parents
-    outputContainer.appendChild(result);
-    result.appendChild(resultText);
-
 };
 
 const decryptMessage = (e) => {
     e.preventDefault();
     console.log('funciona decryp')
+    const input = document.querySelector('[data-form-input]');
+    const value = input.value;
+    input.value = '';
+    let message = value.toLowerCase();
+    let messageEncrypted = '';
 };
 
 const copyMesagge = (e) => {
     e.preventDefault();
     console.log('funciona copy')
 };
+
+
 // Evento Listener
 buttonEncrypt.addEventListener('click', encryptMessage);
 buttonDecrypt.addEventListener('click', decryptMessage);
