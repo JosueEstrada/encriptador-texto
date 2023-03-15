@@ -48,19 +48,17 @@ const encryptMessage = (e) => {
 
 const decryptMessage = (e) => {
     e.preventDefault();
-    console.log('funciona decryp')
     const input = document.querySelector('[data-form-input]');
     const value = input.value;
     input.value = '';
     let message = value.toLowerCase();
     let messageDecrypted = '';
-    messageDecrypted = message.replace('ai', 'a');
-    messageDecrypted = messageDecrypted.replace('enter', 'e');
-    messageDecrypted = messageDecrypted.replace('imes', 'i');
-    messageDecrypted = messageDecrypted.replace('ober', 'o');
-    messageDecrypted = messageDecrypted.replace('ufat', 'u');
+    messageDecrypted = message.replaceAll('ai', 'a');
+    messageDecrypted = messageDecrypted.replaceAll('enter', 'e');
+    messageDecrypted = messageDecrypted.replaceAll('imes', 'i');
+    messageDecrypted = messageDecrypted.replaceAll('ober', 'o');
+    messageDecrypted = messageDecrypted.replaceAll('ufat', 'u');
     resultText.innerText = messageDecrypted;
-    console.log(messageDecrypted)
     deleteDefaultMessage();
 };
 
@@ -68,12 +66,16 @@ const copyMessage = (e) => {
     e.preventDefault();
     console.log('funciona copy')
     const textToCopy = document.querySelector('[data-copy-text]');
-    navigator.clipboard.writeText(textToCopy.innerText);
+    navigator.clipboard.writeText(textToCopy.innerText).then(() => {
+        console.log('Texto copiado correctamente.');
+    }).catch((err) => {
+        console.error('Error al copiar el texto: ', err);
+    });
 };
 
 const deleteDefaultMessage = () => {
     const deleteDefault = document.querySelector('.defaultMessage');
-    deleteDefault.setAttribute('hidden', true);
+    deleteDefault.setAttribute('hidden', 'true');
 }
 
 

@@ -1,6 +1,7 @@
 body {
-    font-family: Consolas, serif;
+    font-family: 'Inter', serif;
     font-size: 1.5em;
+    background: #E5E5E5;
 }
 
 div {
@@ -9,8 +10,71 @@ div {
     /*margin: 2%;*/
 }
 
-.inputContainer, .resultContainer {
+.inputContainer {
     display: inline-block;
-    width: 45%;
-    margin: 2%;
+
+}
+
+.inputForm {
+    width: 680px;
+    height: 288px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+}
+
+.btnEncrypt {
+    width: 280px;
+    height: 19px;
+    display: inline-flex;
+    flex-direction: row;
+    /*align-items: flex-start;*/
+    padding: 24px;
+    gap: 8px;
+    background: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #FFFFFF;
+    text-align: center;
+    /*justify-content: center;*/
+    align-items: center;
+}
+
+.btnDecrypt {
+    width: 280px;
+    height: 19px;
+    display: inline-flex;
+    flex-direction: row;
+    /*align-items: flex-start;*/
+    padding: 24px;
+    gap: 8px;
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    text-align: center;
+    align-items: center;
+
+}
+
+.btnEncrypt label, .btnDecrypt label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.resultContainer {
+    width: 400px;
+    height: 944px;
+    display: inline-flex;
+    background: #FFFFFF;
+    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.88);
+    border-radius: 32px;
 }
