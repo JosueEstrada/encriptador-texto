@@ -5,6 +5,12 @@ body {
 
 div {
     border: thin solid crimson;
-    padding: 2%;
+    /*padding: 2%;*/
+    /*margin: 2%;*/
+}
+
+.inputContainer, .resultContainer {
+    display: inline-block;
+    width: 45%;
     margin: 2%;
 }
