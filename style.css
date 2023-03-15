@@ -11,8 +11,6 @@ body {
 
 div {
     border: thin solid black;
-    /*padding: 2%;*/
-    /*margin: 2%;*/
 }
 
 .flex-container {
@@ -34,15 +32,28 @@ div {
     border-radius: 32px;
 }
 
+.container-text {
+    height: 80%;
+}
+
+.container-btn {
+    height: 20%;
+}
+
 .inputForm {
     width: 47%;
     height: 288px;
-
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
     color: #0A3871;
+}
+
+.container-btn p {
+    color: #495057;
+    font-size: 12px;
+    line-height: 18px;
 }
 
 .btnContainer {
