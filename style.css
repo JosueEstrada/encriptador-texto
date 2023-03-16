@@ -132,7 +132,9 @@ body {
     border: none;
     background: transparent;
 }
-
+.box-text textarea::placeholder {
+    opacity: 1;
+}
 .termbtns {
     margin-top: auto;
     margin-left: 15%;
@@ -179,6 +181,21 @@ body {
     max-width: 100%;
 }
 
+.msg-ninguno {
+    color: rgba(52, 58, 64, 1);
+    font-weight: Bold;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+}
+
+.msg-ingresa {
+    color: rgba(73, 80, 87, 1);
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+}
+
 .btn-copiar {
     justify-content: center;
     margin-top: auto;
@@ -189,4 +206,14 @@ body {
 
 .btn-copiar button {
     width: 80%;
+}
+
+footer.container {
+    justify-content: center;
+    background: var(--dark-blue-300);
+    color: white;
+    font-family: 'Inter';
+    font-size: 16px;
+    padding: 2%;
+    flex-flow: row wrap;
 }
