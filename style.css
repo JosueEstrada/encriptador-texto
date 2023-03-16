@@ -111,3 +111,10 @@ div {
     display: flex;
     flex-direction: row;
 }
+
+.imgPerson img{
+    width: 75%;
+    padding: 2%;
+    align-items: center;
+
+}
