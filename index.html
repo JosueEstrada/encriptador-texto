@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -8,66 +8,45 @@
   <title>Encriptador de texto</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-<header>
-  <div class="navbar">
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>Profile</li>
-        <li>Contacto</li>
-      </ul>
-    </nav>
-  </div>
-</header>
 <main>
-  <div class="flex-container">
-    <div class="inputContainer">
-      <div class="container-text">
-        <form action="">
-          <input type="text" name="" placeholder="Ingrese el texto aquí" class="inputForm" data-form-input/>
-        </form>
+  <div class="flex-container box">
+    <div class="container left">
+      <div class="container box-text">
+        <textarea cols="30" rows="10" placeholder="Ingrese el texto aquí" data-textarea></textarea>
       </div>
-      <div class="container-btn">
-        <div>
-          <p><img src="./images/vector.png">Solo letras minúsculas y sin acentos</p>
+      <div class="termbtns">
+        <div class="container terms">
+          <img src="./images/vector.png">
+          <p>Solo letras minúsculas y sin acentos</p>
         </div>
-        <div class="btnContainer">
-          <div class="btn">
-            <button type="submit" class="btnEncrypt" data-btn-encrypt><label>Encriptar</label></button>
-          </div>
-          <div class="btn">
-            <button type="submit" class="btnDecrypt" data-btn-decrypt><label>Desencriptar</label></button>
-          </div>
+        <div class="container btns">
+          <button type="submit" class="btn-dark" data-btn-encrypt="">Encriptar</button>
+          <button type="submit" class="btn-light" data-btn-decrypt="">Desencriptar</button>
         </div>
       </div>
+
     </div>
-    <div class="resultContainer" data-result-container>
-      <div class="defaultMessage">
-        <div data-result-default>
-          <div class="imgPerson">
-            <img src="./images/muneco.png" alt="Imagen de encriptado" srcset="">
-          </div>
-          <p>Mensaje encriptado</p>
-          <p>Ningún mensaje fue encontrado</p>
+    <div class="container right" data-result-container>
+      <div class="default" data-default>
+        <div class="container img">
+          <img src="./images/muneco.png" class="muneco" alt="Imagen de encriptado" srcset="">
         </div>
-        <div>
-          <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        <div class="container msg-ninguno">
+          Ningún mensaje fue encontrado
+        </div>
+        <div class="container msg-ingresa">
+          Ingresa el texto que desees encriptar o desencriptar
         </div>
       </div>
-      <div class="copyContainer">
-        <button type="submit" class="btnCopy" data-btn-copy>Copiar</button>
+      <div class="container btn-copiar">
+        <button type="submit" class="btn-light" data-btn-copy>Copiar</button>
       </div>
     </div>
   </div>
+
 </main>
-<footer>
-  <div>
-    <p>Footer Josué Augusto Estrada López</p>
-  </div>
-</footer>
 <script src="script.js"></script>
 </body>
 </html>

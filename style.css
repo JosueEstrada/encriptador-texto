@@ -1,120 +1,192 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-* {
-    font-family: 'Inter', sans-serif;
+/* #### Custom Properties #### */
+:root {
+    /* branding colors */
+    /* Dark blue */
+    --dark-blue-100: #609ED4;
+    --dark-blue-200: #356EA9;
+    --dark-blue-300: #0A3871;
+    --dark-blue-400: #072B61;
+    --dark-blue-500: #052051;
+    /* Light blue */
+    --light-blue-100: #F3F5FC;
+    --light-blue-200: #EFF1FA;
+    --light-blue-300: #E9ECF8;
+    --light-blue-400: #AAB2D5;
+    --light-blue-500: #757FB2;
+    /* Gray */
+    --gray-100: #CED4DA;
+    --gray-200: #ADB5BD;
+    --gray-300: #868E96;
+    --gray-400: #495057;
+    --gray-500: #343A40;
+}
+/* components */
+.header-border {
+    border: 1px dashed #7B61FF;
+    border-radius: 5px;
 }
 
+.btn-light {
+    background: #D8DFE8;
+    border: 1px solid var(--dark-blue-300);
+    border-radius: 24px;
+    color: var(--dark-blue-300);
+    height: 67px;
+}
+
+.btn-light.active:hover {
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+    background: var(--light-blue-200);
+}
+
+.btn-dark {
+    background: var(--dark-blue-300);
+    border-radius: 24px;
+    color: #FFFFFF;
+    height: 67px;
+}
+
+.btn-dark.active:hover {
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+    background: var(--dark-blue-400);
+    border-radius: 24px;
+}
+
+
+/** {*/
+/*    font-family: 'Inter', sans-serif;*/
+/*}*/
 body {
     font-family: 'Inter', sans-serif;
     font-size: 1.5em;
-    background: #E5E5E5;
-}
-
-div {
-    border: thin solid black;
+    background: var(--light-blue-100);
 }
 
 .flex-container {
     display: flex;
-    margin: 3%;
+    border: 1px solid crimson;
+    padding: 20px;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    width: 80%;
+    /*height: 100vh;*/
+    justify-content: center;
+    /*background-color: lightseagreen;*/
+    /*align-content: normal;*/
+    /*align-items: center;*/
 }
 
-.inputContainer {
-    width: 70%;
-    margin: 3%;
+.container {
+    display: flex;
+    /*border: 1px solid black;*/
+    /*background-color: #FFFFFF;*/
+    /*width: 50px;*/
+    /*height: 120px;*/
+    /*line-height: 300px;*/
+    text-align: center;
+
+    /*margin-top: 5px;*/
+    /*margin-bottom: 5px;*/
+    /*margin: 5px;*/
+    /*flex-basis: 3; !*Width*!*/
+    /*flex-grow: 1;*/
+    /*height: 100px;*/
 }
 
-.resultContainer {
-    width: 30%;
-    margin: 3%;
-    height: 50%;
-    background: #FFFFFF;
-    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.88);
+.box {
+    gap: 2%;
+}
+
+.left {
+    background-color: transparent;
+    flex: 72;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.right {
+    background-color: #FFFFFF;
+    flex: 28;
+    display: flex;
+    flex-flow: column wrap;
     border-radius: 32px;
+    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.07999999821186066);
 }
 
-.container-text {
-    height: 80%;
+.box-text {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 13%;
+    margin-bottom: 10%;
 }
 
-.container-btn {
-    height: 20%;
-}
 
-.inputForm {
-    width: 47%;
-    height: 288px;
-    font-style: normal;
-    font-weight: 400;
+.box-text textarea {
     font-size: 32px;
-    line-height: 150%;
-    color: #0A3871;
+    color: var(--dark-blue-300);
+    text-align: left;
+    resize: none;
+    border: none;
+    background: transparent;
 }
 
-.container-btn p {
-    color: #495057;
+.termbtns {
+    margin-top: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 20px;
+}
+
+.btns {
+    align-self: flex-end;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5%;
+}
+
+.btns .btn-dark {
+    flex: 1;
+    border: 1px solid var(--dark-blue-300);
+}
+
+.btns .btn-light {
+    /*background: #D8DFE8;*/
+    flex: 1;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.terms p {
+    font-family: Inter, serif;
     font-size: 12px;
-    line-height: 18px;
+    opacity: 0.8;
+    text-align: left;
 }
 
-.btnContainer {
-    display: flex;
-    flex-direction: row;
+/* Properties Right Box*/
+.default {
+    margin: 10%;
 }
 
-.btnEncrypt {
-    width: 280px;
-    height: 19px;
-    display: flex;
-    flex-direction: row;
-    /*align-items: flex-start;*/
-    padding: 24px;
-    gap: 8px;
-    background: #0A3871;
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-    color: #FFFFFF;
-    text-align: center;
-    /*justify-content: center;*/
-    align-items: center;
+.muneco {
+    max-width: 100%;
 }
 
-.btnDecrypt {
-    width: 280px;
-    height: 19px;
-    display: flex;
-    flex-direction: row;
-    /*align-items: flex-start;*/
-    padding: 24px;
-    gap: 8px;
-    background: #D8DFE8;
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-    color: #0A3871;
-    text-align: center;
-    align-items: center;
-
+.btn-copiar {
+    justify-content: center;
+    margin-top: auto;
+    background-color: transparent;
+    padding-bottom: 20px;
+    /*width: 80%;*/
 }
 
-.btnEncrypt label, .btnDecrypt label {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    flex: none;
-    border: 0;
-    flex-grow: 1;
-
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-}
-
-.imgPerson img{
-    width: 75%;
-    padding: 2%;
-    align-items: center;
-
+.btn-copiar button {
+    width: 80%;
 }

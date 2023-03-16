@@ -12,7 +12,7 @@ result.appendChild(resultText);
 
 const encryptMessage = (e) => {
     e.preventDefault();
-    const input = document.querySelector('[data-form-input]');
+    const input = document.querySelector('[data-textarea]');
     const value = input.value;
     input.value = '';
     let message = value.toLowerCase();
@@ -48,7 +48,7 @@ const encryptMessage = (e) => {
 
 const decryptMessage = (e) => {
     e.preventDefault();
-    const input = document.querySelector('[data-form-input]');
+    const input = document.querySelector('[data-textarea]');
     const value = input.value;
     input.value = '';
     let message = value.toLowerCase();
@@ -74,12 +74,30 @@ const copyMessage = (e) => {
 };
 
 const deleteDefaultMessage = () => {
-    const deleteDefault = document.querySelector('.defaultMessage');
+    const deleteDefault = document.querySelector('[data-default]');
     deleteDefault.setAttribute('hidden', 'true');
 }
 
+// BOTONES ON CLICK
+// const buttonEncrypt = document.querySelector('.btn-dark');
+// const button2 = document.querySelector('.btn-light');
+const addButtonListener = (buttonElement) => {
+    buttonElement.addEventListener('click', () => {
+        buttonElement.classList.add('active');
+    });
+
+    const resetButton = () => {
+        buttonElement.classList.remove('active');
+    };
+
+    buttonElement.addEventListener('mouseout', resetButton);
+};
+
+addButtonListener(buttonEncrypt);
+addButtonListener(buttonDecrypt);
 
 // Evento Listener
+
 buttonEncrypt.addEventListener('click', encryptMessage);
 buttonDecrypt.addEventListener('click', decryptMessage);
 buttonCopy.addEventListener('click', copyMessage);
