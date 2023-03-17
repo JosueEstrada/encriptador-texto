@@ -3,12 +3,17 @@ const buttonDecrypt = document.querySelector('[data-btn-decrypt]');
 const buttonCopy = document.querySelector('[data-btn-copy]');
 
 // Crear contenedor de resultado
-const outputContainer = document.querySelector('[data-result-container]');
-const result = document.createElement('div');
-const resultText = document.createElement('span');
-resultText.setAttribute('data-copy-text', '');
-outputContainer.prepend(result);
-result.appendChild(resultText);
+// const outputContainer = document.querySelector('[data-result-container]');
+// const result = document.createElement('div');
+// const resultText = document.createElement('span');
+// resultText.setAttribute('data-copy-text', '');
+// outputContainer.prepend(result);
+// result.appendChild(resultText);
+const resultText = document.querySelector('[data-copy-text]');
+
+const output = document.querySelector('.output');
+
+
 
 const encryptMessage = (e) => {
     e.preventDefault();
@@ -43,6 +48,7 @@ const encryptMessage = (e) => {
     });
     messageEncrypted = arr.join('');
     resultText.innerText = messageEncrypted;
+    output.style.display = 'revert';
     deleteDefaultMessage();
     showButtonCopy();
 };
@@ -60,6 +66,7 @@ const decryptMessage = (e) => {
     messageDecrypted = messageDecrypted.replaceAll('ober', 'o');
     messageDecrypted = messageDecrypted.replaceAll('ufat', 'u');
     resultText.innerText = messageDecrypted;
+    output.style.display = 'revert';
     deleteDefaultMessage();
     showButtonCopy();
 };
