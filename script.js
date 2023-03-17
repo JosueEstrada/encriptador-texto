@@ -44,6 +44,7 @@ const encryptMessage = (e) => {
     messageEncrypted = arr.join('');
     resultText.innerText = messageEncrypted;
     deleteDefaultMessage();
+    showButtonCopy();
 };
 
 const decryptMessage = (e) => {
@@ -60,6 +61,7 @@ const decryptMessage = (e) => {
     messageDecrypted = messageDecrypted.replaceAll('ufat', 'u');
     resultText.innerText = messageDecrypted;
     deleteDefaultMessage();
+    showButtonCopy();
 };
 
 const copyMessage = (e) => {
@@ -75,12 +77,14 @@ const copyMessage = (e) => {
 
 const deleteDefaultMessage = () => {
     const deleteDefault = document.querySelector('[data-default]');
-    deleteDefault.setAttribute('hidden', 'true');
+    deleteDefault.style.display = 'none';
 }
 
-// BOTONES ON CLICK
-// const buttonEncrypt = document.querySelector('.btn-dark');
-// const button2 = document.querySelector('.btn-light');
+const showButtonCopy = () => {
+    const showCopy = document.querySelector('.btn-copiar');
+    showCopy.style.display = 'revert';
+}
+
 const addButtonListener = (buttonElement) => {
     buttonElement.addEventListener('click', () => {
         buttonElement.classList.add('active');

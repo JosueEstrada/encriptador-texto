@@ -112,6 +112,7 @@ body {
     flex: 28;
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
     border-radius: 32px;
     box-shadow: 0 24px 32px rgba(0, 0, 0, 0.07999999821186066);
 }
@@ -175,6 +176,8 @@ body {
 /* Properties Right Box*/
 .default {
     margin: 10%;
+    flex-flow: column wrap;
+    gap: 16px;
 }
 
 .muneco {
@@ -197,6 +200,7 @@ body {
 }
 
 .btn-copiar {
+    display: none;
     justify-content: center;
     margin-top: auto;
     background-color: transparent;
