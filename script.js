@@ -130,6 +130,11 @@ logo.addEventListener('mouseenter', () => {
     navMenu.style.display = 'flex';
 });
 
+// Refrescar pagina
+document.getElementById("refresh-button").addEventListener("click", function() {
+    location.reload();
+});
+
 
 // Evento Listener
 
