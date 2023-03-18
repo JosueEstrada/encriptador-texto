@@ -5,7 +5,7 @@
     /* Dark blue */
     --dark-blue-100: #609ED4;
     --dark-blue-200: #356EA9;
-    --dark-blue-300: #0A3871;
+    --dark-blue-300: #0a3870;
     --dark-blue-400: #072B61;
     --dark-blue-500: #052051;
     /* Light blue */
@@ -33,6 +33,7 @@
     border-radius: 24px;
     color: var(--dark-blue-300);
     height: 67px;
+    cursor: pointer;
 }
 
 .btn-light.active:hover {
@@ -46,6 +47,7 @@
     border-radius: 24px;
     color: #FFFFFF;
     height: 67px;
+    cursor: pointer;
 }
 
 .btn-dark.active:hover {
@@ -64,6 +66,55 @@ body {
     font-size: 1.5em;
     background: var(--light-blue-100);
 }
+
+header {
+    /*position: fixed;*/
+    width: 100%;
+    height: 72px;
+}
+
+.nav {
+    display: flex;
+    border: 2px solid gold;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.nav-menu {
+    /*display: flex;*/
+    display: none;
+    justify-content: space-around;
+    width: 100%;
+    margin-right: 40%;
+}
+
+.nav-menu-item {
+    border: 2px solid var(--dark-blue-300);
+    border-radius: 32px;
+    padding: 1%;
+    cursor: pointer;
+}
+
+.nav-menu-item img {
+    width: 30px;
+}
+
+.nav-menu-link {
+    text-decoration: none;
+    color: var(--dark-blue-300);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5%;
+}
+
+
 
 .flex-container {
     display: flex;

@@ -46,11 +46,20 @@ const encryptMessage = (e) => {
                 break;
         }
     });
+
     messageEncrypted = arr.join('');
-    resultText.innerText = messageEncrypted;
-    output.style.display = 'revert';
-    deleteDefaultMessage();
-    showButtonCopy();
+    if (messageEncrypted === message) {
+        console.log('Ninguna vocal encontrada');
+        // Mostrar mensaje default
+        output.style.display = 'none';
+        showDefaultMessage();
+    }
+    else {
+        resultText.innerText = messageEncrypted;
+        output.style.display = 'revert';
+        deleteDefaultMessage();
+        showButtonCopy();
+    }
 };
 
 const decryptMessage = (e) => {
@@ -86,6 +95,10 @@ const deleteDefaultMessage = () => {
     const deleteDefault = document.querySelector('[data-default]');
     deleteDefault.style.display = 'none';
 }
+const showDefaultMessage = () => {
+    const deleteDefault = document.querySelector('[data-default]');
+    deleteDefault.style.display = 'revert';
+}
 
 const showButtonCopy = () => {
     const showCopy = document.querySelector('.btn-copiar');
@@ -106,6 +119,17 @@ const addButtonListener = (buttonElement) => {
 
 addButtonListener(buttonEncrypt);
 addButtonListener(buttonDecrypt);
+
+// Mostrar y ocultar el nav
+const logo = document.querySelector('.logo');
+const navMenu = document.querySelector('.nav-menu');
+logo.addEventListener('click', () => {
+    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+logo.addEventListener('mouseenter', () => {
+    navMenu.style.display = 'flex';
+});
+
 
 // Evento Listener
 
